@@ -1,0 +1,2 @@
+-- 001_initial_schema.sql
+-- schema intentionally empty for now
