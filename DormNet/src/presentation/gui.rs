@@ -8,9 +8,9 @@ use std::sync::mpsc::{self, Receiver, Sender};
 use std::sync::Arc;
 use std::thread;
 
-use dormnet::auth::{AuthError, AuthProvider, MikroTikHotspotAuth};
-use dormnet::creds::{self, Credentials};
-use dormnet::network::{Connectivity, NetworkMonitor};
+use crate::infrastructure::auth::{AuthError, AuthProvider, MikroTikHotspotAuth};
+use crate::infrastructure::credentials_store::{self as creds, Credentials};
+use crate::infrastructure::network::{Connectivity, NetworkMonitor};
 use eframe::egui::{
     self, Color32, ColorImage, CornerRadius, FontData, FontDefinitions, FontFamily, FontId, Frame,
     Margin, RichText, Sense, Stroke, TextEdit, TextureHandle, TextureOptions, Ui, Vec2,
@@ -93,7 +93,7 @@ impl App {
             has_stored,
             tx,
             rx,
-            logo: load_texture(ctx, "logo", include_bytes!("../assets/window-icon.png")),
+            logo: load_texture(ctx, "logo", include_bytes!("../../assets/window-icon.png")),
         };
         app.refresh_net();
         app
@@ -753,9 +753,9 @@ fn apply_theme(ctx: &egui::Context) {
 }
 
 fn load_window_icon() -> Option<egui::IconData> {
-    eframe::icon_data::from_png_bytes(include_bytes!("../assets/window-icon.png"))
+    eframe::icon_data::from_png_bytes(include_bytes!("../../assets/window-icon.png"))
         .or_else(|_| {
-            eframe::icon_data::from_png_bytes(include_bytes!("../assets/dormnet-icon-32.png"))
+            eframe::icon_data::from_png_bytes(include_bytes!("../../assets/dormnet-icon-32.png"))
         })
         .ok()
 }

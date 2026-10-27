@@ -6,7 +6,7 @@ use std::time::Duration;
 
 use tokio::sync::Mutex;
 
-use crate::network::{Connectivity, NetworkMonitor};
+use crate::infrastructure::network::{Connectivity, NetworkMonitor};
 
 /// Prevents concurrent authentication attempts.
 #[derive(Clone, Default)]

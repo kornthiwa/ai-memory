@@ -13,7 +13,7 @@ use async_trait::async_trait;
 use reqwest::Client;
 use tracing::{info, warn};
 
-use crate::creds::Credentials;
+use crate::domain::Credentials;
 
 use super::{AuthError, AuthOutcome, AuthProvider};
 

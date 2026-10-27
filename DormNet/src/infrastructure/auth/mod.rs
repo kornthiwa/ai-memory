@@ -6,7 +6,7 @@ use async_trait::async_trait;
 use reqwest::Client;
 use thiserror::Error;
 
-use crate::creds::Credentials;
+use crate::domain::Credentials;
 
 pub use mikrotik::MikroTikHotspotAuth;
 
